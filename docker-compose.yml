@@ -4,8 +4,8 @@ registry:
   ports:
     - 5000:5000
   environment:
-    # REGISTRY_HTTP_TLS_CERTIFICATE: /certs/fullchain.pem
-    # REGISTRY_HTTP_TLS_KEY: /certs/privkey.pem
+    REGISTRY_HTTP_TLS_CERTIFICATE: /certs/fullchain.pem
+    REGISTRY_HTTP_TLS_KEY: /certs/privkey.pem
     REGISTRY_HTTP_ADDR: :5000
     # REGISTRY_AUTH: htpasswd
     # REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
@@ -17,16 +17,16 @@ registry:
   labels:
     io.rancher.scheduler.affinity:host_label: registry.enabled=true
 
-nginx:
-  image: "nginx"
-  ports:
-    - 443:443
-  links:
-    - registry
-  volumes:
-    - ./registry/config/nginx:/etc/nginx/conf.d
-  labels:
-    io.rancher.scheduler.affinity:host_label: registry.enabled=true
+# nginx:
+#   image: "nginx"
+#   ports:
+#     - 443:443
+#   links:
+#     - registry
+#   volumes:
+#     - ./registry/config/nginx:/etc/nginx/conf.d
+#   labels:
+#     io.rancher.scheduler.affinity:host_label: registry.enabled=true
 # ssl:
 #   image: containersol/docker-registry-proxy
 #   ports:
