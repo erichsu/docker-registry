@@ -11,9 +11,9 @@ registry:
     # REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
     # REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
   volumes:
-    - /docker/registry/data:/var/lib/registry
-    - /docker/registry/certs:/certs
-    - /docker/registry/auth:/auth
+    - ./registry/data:/var/lib/registry
+    - ./registry/certs:/certs
+    - ./registry/auth:/auth
   labels:
     io.rancher.scheduler.affinity:host_label: registry.enabled=true
 
@@ -24,7 +24,7 @@ nginx:
   links:
     - registry
   volumes:
-    - /docker/registry/config/nginx:/etc/nginx/conf.d
+    - ./registry/config/nginx:/etc/nginx/conf.d
   labels:
     io.rancher.scheduler.affinity:host_label: registry.enabled=true
 # ssl:
