@@ -1,0 +1,9 @@
+{
+	"domain": "app1.dev.tutormeet.plus",
+	"certUrl": "https://acme-v01.api.letsencrypt.org/acme/cert/03da71b191b6a0b4ac416fd638e5cf070b2c",
+	"certStableUrl": "",
+	"accountRef": "https://acme-v01.api.letsencrypt.org/acme/reg/6363581",
+	"dnsNames": "app1.dev.tutormeet.plus|app2.dev.tutormeet.plus|app3.dev.tutormeet.plus|app4.dev.tutormeet.plus|app5.dev.tutormeet.plus|app6.dev.tutormeet.plus|docker-cn.tutormeet.plus|docker.tutormeet.plus|www.tutormeet.plus|www.stage.tutormeet.plus",
+	"expiryDate": "2017-02-18T04:02:00Z",
+	"serialNumber": "335669538539531635261777141891522250607404"
+}
